@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  automatically:
+    build:
+      context: /home/utsav/parasDocker/
+    ports:
+    - "8000:8000"
+    hostname: app
+    container_name: app
+    networks:
+    - network
+    restart: always
+
+#  nginx:
+#    build:
+#      context: /home/utsav/parasDocker/nginx/
+#    ports:
+#    - "80:80"
+#    hostname: nginx
+#    networks:
+#    - network
+#    depends_on:
+#    - automatically
+#    restart: always
+
+networks:
+  network:
+    driver: bridge
